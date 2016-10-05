@@ -22,8 +22,9 @@ void Game::Run()
 {
 	// Init Game
 
-	// Create Ball object
+	// Create objects
 	CreateObject(new Ball(sf::Vector2f(50, 50)));
+	CreateObject(new Bumper(sf::Vector2f(_window->getSize().x / 2, _window->getSize().y - 30)));
 
 	// Game Loop
 	sf::Clock clock;
@@ -84,7 +85,7 @@ void Game::Render()
 	_window->display();
 }
 
-void Game::CreateObject(Object * obj)
+void Game::CreateObject(Object* obj)
 {
 	_objects.push_back(obj);
 }
@@ -115,7 +116,7 @@ void Game::DestroyObjects()
 }
 
 
-sf::RenderWindow * GetGameWindow()
+sf::RenderWindow* GetGameWindow()
 {
 	return gameHandle->_window;
 }

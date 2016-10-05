@@ -5,9 +5,10 @@
 Ball::Ball(sf::Vector2f position):
 	_velocity(300,300)
 {
+	_size = 20;
 	_position = position;
 	_ball.setPosition(_position);
-	_ball.setRadius(10);
+	_ball.setRadius(_size / 2);
 	_ball.setFillColor(sf::Color::Red);
 	_ball.setOutlineColor(sf::Color::Black);
 	_ball.setOutlineThickness(2);
@@ -29,19 +30,19 @@ void Ball::Update(sf::Time _deltaTime)
 	_position = _ball.getPosition();
 
 	// check ball collision on walls on screen
-	if (_ball.getPosition().x <= 0 + 20)
+	if (_ball.getPosition().x <= 0 + _size)
 	{
 		_velocity.x *= -1;
 	}
-	if (_ball.getPosition().x >= 800 - 20)
+	if (_ball.getPosition().x >= 800 - _size)
 	{
 		_velocity.x *= -1;
 	}
-	if (_ball.getPosition().y <= 0 + 20)
+	if (_ball.getPosition().y <= 0 + _size)
 	{
 		_velocity.y *= -1;
 	}
-	if (_ball.getPosition().y >= 600 - 20)
+	if (_ball.getPosition().y >= 600 - _size)
 	{
 		_velocity.y *= -1;
 	}
