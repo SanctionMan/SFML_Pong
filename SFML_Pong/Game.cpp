@@ -120,3 +120,19 @@ sf::RenderWindow* GetGameWindow()
 {
 	return gameHandle->_window;
 }
+
+Bumper* GetBumper()
+{
+	//Loop through objects;
+	for (Object* obj : gameHandle->_objects)
+	{
+		//If this is Bumper, go in here and return it!
+		if (obj->_name == "Bumper")
+		{
+			return (Bumper*)obj; //can cast to bumper because bumper inherits from object.
+		}
+	}
+
+	//Return null if nothing is there...
+	return 0;
+}

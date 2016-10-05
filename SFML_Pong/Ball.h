@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Object.h"
+#include "Game.h"
 
 class Ball : public Object
 {
@@ -11,6 +12,9 @@ public:
 	void Events(sf::Event &event);
 	void Update(sf::Time _deltaTime);
 	void Render(sf::RenderWindow &_window);
+
+	void CheckScreenCollision();
+	void CheckBumperCollision();
 
 
 private:

@@ -4,6 +4,7 @@
 
 Bumper::Bumper(sf::Vector2f position)
 {
+	_name = "Bumper";
 	_size = sf::Vector2f(200, 20);
 	_position = position;
 	_bumper.setPosition(_position);
@@ -46,3 +47,4 @@ void Bumper::Render(sf::RenderWindow & _window)
 {
 	_window.draw(_bumper);
 }
+

@@ -9,7 +9,7 @@
 #include "Bumper.h"
 
 using namespace std;
-
+class Bumper;
 class Game
 {
 public:
@@ -37,6 +37,7 @@ private:
 
 };
 
-// How to get game window from anywhere
+// Some Game handles
 sf::RenderWindow* GetGameWindow();
+Bumper* GetBumper();
 

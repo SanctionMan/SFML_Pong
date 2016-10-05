@@ -14,9 +14,9 @@ public:
 	void Render(sf::RenderWindow &_window);
 
 
-private:
-
 	sf::Vector2f _size;
 	sf::RectangleShape _bumper;
+
 };
+
 
